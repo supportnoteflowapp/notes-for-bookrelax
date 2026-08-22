@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feedback — NoteFlow</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#010409;--border:#21262d;--green:#238636;--green2:#56d364;--blue:#58a6ff;--text:#c9d1d9;--muted:#8b949e;--dim:#6e7681;--gold:#d29922;--red:#f85149}
+body{font-family:-apple-system,'Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+a{color:var(--blue);text-decoration:none}
+nav{background:var(--bg3);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:22px}.nav-name{font-size:15px;font-weight:800;color:var(--blue)}
+.nav-badge{font-size:10px;background:#1a4731;color:var(--green2);border:1px solid var(--green);padding:2px 8px;border-radius:20px;font-weight:700}
+.nav-right{margin-left:auto}
+.nav-back{color:var(--muted);font-size:13px;font-weight:700;text-decoration:none}
+.nav-back:hover{color:var(--text)}
+.page{max-width:560px;margin:0 auto;padding:40px 24px 60px}
+.page-title{font-size:28px;font-weight:800;color:#f0f6ff;margin-bottom:8px;text-align:center}
+.page-sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:32px}
+.tabs{display:flex;gap:0;margin-bottom:28px;border-bottom:1px solid var(--border)}
+.tab{flex:1;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+.tab:hover{color:var(--text);background:var(--bg2)}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.form-pane{display:none}.form-pane.active{display:block}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.field input,.field textarea,.field select{width:100%;padding:11px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:#e6edf3;font-size:14px;font-family:inherit;outline:none;transition:.15s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue)}
+.field textarea{min-height:120px;resize:vertical;line-height:1.6}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%238b949e' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field .hint{font-size:11px;color:var(--dim);margin-top:4px}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a4731,var(--green));color:var(--green2);font-size:14px;font-weight:800;border:1px solid var(--green);border-radius:8px;cursor:pointer;font-family:inherit;transition:.15s}
+.submit-btn:hover{filter:brightness(1.1)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.status{padding:12px 16px;border-radius:8px;font-size:13px;margin-top:14px;display:none;line-height:1.5}
+.status.ok{background:#1a4731;border:1px solid var(--green);color:var(--green2);display:block}
+.status.err{background:#3d1c1c;border:1px solid #6e1c1c;color:var(--red);display:block}
+.status.loading{background:#1c2333;border:1px solid var(--border);color:var(--blue);display:block}
+.info-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:24px;font-size:12px;color:var(--muted);line-height:1.7}
+footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">🖐</span>
+  <span class="nav-name">NoteFlow</span>
+  <span class="nav-badge">v7.0.1</span>
+  <div class="nav-right">
+    <a class="nav-back" href="index.html">← Back to Home</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-title">Feedback & Support</div>
+  <p class="page-sub">Help us improve NoteFlow — report issues, suggest features, or ask questions.</p>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="bug">🐛 Report Bug</div>
+    <div class="tab" data-tab="feature">💡 Feature Request</div>
+    <div class="tab" data-tab="contact">📧 Contact Us</div>
+  </div>
+
+  <!-- Bug Report -->
+  <div class="form-pane active" id="pane-bug">
+    <div class="info-box">Please describe the bug in detail so we can fix it quickly. Include what you expected to happen vs what actually happened.</div>
+    <form id="formBug" onsubmit="return submitForm(event,'bug')">
+      <div class="field">
+        <label>Your Email</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="field">
+        <label>Bug Category</label>
+        <select name="category">
+          <option value="auto-fill">Auto-fill not working</option>
+          <option value="body-chart">Body chart detection issue</option>
+          <option value="template">Template / Slot problem</option>
+          <option value="license">License / Payment issue</option>
+          <option value="ui">UI / Display problem</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>What happened?</label>
+        <textarea name="description" required placeholder="Describe the bug in detail...&#10;&#10;Example: When I click Start on the Work list page, nothing happens. The log shows '找不到 EDIT' error. I'm using 60min Remedial massage clients."></textarea>
+        <div class="hint">Include the client type, duration, and any error messages from the log box.</div>
+      </div>
+      <div class="field">
+        <label>Browser &amp; Extension Version</label>
+        <input type="text" name="version" placeholder="e.g. Chrome 126, Extension v7.0.1">
+      </div>
+      <button type="submit" class="submit-btn" id="btnBug">Submit Bug Report →</button>
+      <div class="status" id="statusBug"></div>
+    </form>
+  </div>
+
+  <!-- Feature Request -->
+  <div class="form-pane" id="pane-feature">
+    <div class="info-box">Have an idea to make NoteFlow better? We read every suggestion and prioritize based on user demand.</div>
+    <form id="formFeature" onsubmit="return submitForm(event,'feature')">
+      <div class="field">
+        <label>Your Email</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="field">
+        <label>Feature Category</label>
+        <select name="category">
+          <option value="template">Templates & Slots</option>
+          <option value="body-chart">Body Chart Detection</option>
+          <option value="muscle-picker">Muscle Picker</option>
+          <option value="automation">Automation Flow</option>
+          <option value="ui">Interface / UX</option>
+          <option value="integration">New Integration</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>What feature would you like?</label>
+        <textarea name="description" required placeholder="Describe the feature you'd like...&#10;&#10;Example: It would be great if the extension could auto-detect the client's appointment duration from the booking page instead of matching by time ranges."></textarea>
+      </div>
+      <div class="field">
+        <label>How important is this to you?</label>
+        <select name="priority">
+          <option value="nice-to-have">Nice to have</option>
+          <option value="important">Important — would save me time</option>
+          <option value="critical">Critical — blocking my workflow</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn" id="btnFeature">Submit Feature Request →</button>
+      <div class="status" id="statusFeature"></div>
+    </form>
+  </div>
+
+  <!-- Contact -->
+  <div class="form-pane" id="pane-contact">
+    <div class="info-box">Questions about your license, billing, setup, or anything else? We'll get back to you within 24 hours.</div>
+    <form id="formContact" onsubmit="return submitForm(event,'contact')">
+      <div class="field">
+        <label>Your Email</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="field">
+        <label>Subject</label>
+        <select name="category">
+          <option value="license">License / Activation</option>
+          <option value="billing">Billing / Payment</option>
+          <option value="setup">Setup / Installation</option>
+          <option value="refund">Refund Request</option>
+          <option value="other">Other Question</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Your Message</label>
+        <textarea name="description" required placeholder="How can we help you?"></textarea>
+      </div>
+      <div class="field">
+        <label>License Key (optional)</label>
+        <input type="text" name="licenseKey" placeholder="XXXX-XXXX-XXXX-XXX">
+        <div class="hint">If your question is about a license, please include it so we can look it up.</div>
+      </div>
+      <button type="submit" class="submit-btn" id="btnContact">Send Message →</button>
+      <div class="status" id="statusContact"></div>
+    </form>
+  </div>
+</div>
+
+<footer>NoteFlow v7.0.1 · independent BookRelax Chrome extension · supportnoteflow.app@gmail.com</footer>
+
+<script>
+const GAS_BASE_URL = 'https://script.google.com/macros/s/AKfycby_SF9D5p-OjzoKXISkyIStJaMzOFcF_kkaX0OWoNzKVNKGJ2_SIjaoUztuz2q0hJPD/exec';
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.form-pane').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('pane-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Auto-switch tab from URL hash
+const hash = location.hash.replace('#','');
+if(['bug','feature','contact'].includes(hash)){
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === hash));
+  document.querySelectorAll('.form-pane').forEach(p => p.classList.toggle('active', p.id === 'pane-' + hash));
+}
+
+function submitForm(e, type) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const statusEl = form.querySelector('.status');
+  const data = Object.fromEntries(new FormData(form));
+  data.type = type;
+  data.timestamp = new Date().toISOString();
+  data.userAgent = navigator.userAgent;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  statusEl.className = 'status loading';
+  statusEl.textContent = 'Submitting your feedback...';
+
+  fetch(GAS_BASE_URL + '?route=feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+    mode: 'no-cors'
+  }).then(() => {
+    statusEl.className = 'status ok';
+    statusEl.textContent = 'Thank you! Your ' + (type === 'bug' ? 'bug report' : type === 'feature' ? 'feature request' : 'message') + ' has been submitted. We\'ll review it shortly.';
+    form.reset();
+    btn.disabled = false;
+    btn.textContent = type === 'bug' ? 'Submit Bug Report →' : type === 'feature' ? 'Submit Feature Request →' : 'Send Message →';
+  }).catch(err => {
+    statusEl.className = 'status err';
+    statusEl.textContent = 'Failed to submit. Please try again or email us directly at supportnoteflow.app@gmail.com';
+    btn.disabled = false;
+    btn.textContent = type === 'bug' ? 'Submit Bug Report →' : type === 'feature' ? 'Submit Feature Request →' : 'Send Message →';
+  });
+
+  return false;
+}
+</script>
+</body>
+</html>
+
