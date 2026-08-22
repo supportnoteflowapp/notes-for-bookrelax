@@ -20,7 +20,7 @@
 <main>
   <h1>Privacy Policy</h1>
   <p class="meta">Product: NoteFlow - AI Notes for BookRelax</p>
-  <p class="meta">Effective date: July 22, 2026 | Last updated: July 22, 2026</p>
+  <p class="meta">Effective date: July 22, 2026 | Last updated: August 22, 2026</p>
 
   <h2>Product Scope</h2>
   <p>NoteFlow helps massage therapists generate and insert treatment notes into BookRelax. Its single purpose is to help massage therapists generate and insert treatment notes into BookRelax.</p>
@@ -33,14 +33,14 @@
   <p>Customer treatment information and health-related information may be processed locally in the browser to choose template content, body areas, muscles, and fields to insert into BookRelax.</p>
 
   <h2>Data You Provide</h2>
-  <p>You may provide a membership email address, one-time verification codes, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. You also provide consent status when you choose to use the extension.</p>
+  <p>You may provide a NoteFlow account email address, one-time verification codes, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. Email verification is available without a membership purchase. You also provide consent status when you choose to use the extension.</p>
 
   <h2>Local Storage</h2>
-  <p>NoteFlow stores extension settings, templates, body map mappings, membership status, usage counts, referral identifier, active template slot, language choice, and privacy consent status in Chrome extension storage. This data remains until you delete it, reset Chrome extension data, uninstall the extension, or use the in-extension deletion control.</p>
+  <p>NoteFlow stores extension settings, templates, body map mappings, membership status, usage counts, a public referral identifier, a private referral-owner token, active template slot, language choice, and privacy consent status in Chrome extension storage. The private token is never included in the shared referral link. This data remains until you delete it, reset Chrome extension data, uninstall the extension, or use the in-extension deletion control.</p>
   <p>NoteFlow does not store generated treatment-note history as a separate history list. It stores only usage counts and the templates/settings required to operate the extension.</p>
 
   <h2>External Transmission</h2>
-  <p>Membership verification and referral registration are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. The membership verification request includes the member email, one-time verification code when verifying, action, extension version, and an extension installation identifier. Later membership checks may include the membership session token issued after successful verification. The referral registration request includes a referral code and verified member email returned by the membership service.</p>
+  <p>Email verification, membership checks, referral-owner registration, referral conversion records, and reward usage are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. Requests may include the verified email, one-time verification code, action, extension version, installation identifier, public referral code, private referral-owner token, and membership session token. The backend stores only a one-way hash of the private referral-owner token. Successful Gumroad purchase notifications may include buyer email, sale or subscription identifiers, product, payment status, and referral attribution needed to prevent duplicate or self-referral rewards.</p>
   <p>Treatment-note text, body chart content, complaint text, symptoms, customer names, and appointment details are not sent to Google Apps Script by the current extension implementation.</p>
 
   <h2>AI Provider or Backend Processing</h2>
