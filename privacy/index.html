@@ -33,14 +33,14 @@
   <p>Customer treatment information and health-related information may be processed locally in the browser to choose template content, body areas, muscles, and fields to insert into BookRelax.</p>
 
   <h2>Data You Provide</h2>
-  <p>You may provide a membership email, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. You also provide consent status when you choose to use the extension.</p>
+  <p>You may provide a membership email address, one-time verification codes, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. You also provide consent status when you choose to use the extension.</p>
 
   <h2>Local Storage</h2>
   <p>NoteFlow stores extension settings, templates, body map mappings, membership status, usage counts, referral identifier, active template slot, language choice, and privacy consent status in Chrome extension storage. This data remains until you delete it, reset Chrome extension data, uninstall the extension, or use the in-extension deletion control.</p>
   <p>NoteFlow does not store generated treatment-note history as a separate history list. It stores only usage counts and the templates/settings required to operate the extension.</p>
 
   <h2>External Transmission</h2>
-  <p>Membership verification and referral registration are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. The membership verification request includes the membership email, verification action, and extension version. The referral registration request may include a referral code and membership email returned by the membership service.</p>
+  <p>Membership verification and referral registration are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. The membership verification request includes the member email, one-time verification code when verifying, action, extension version, and an extension installation identifier. Later membership checks may include the membership session token issued after successful verification. The referral registration request includes a referral code and verified member email returned by the membership service.</p>
   <p>Treatment-note text, body chart content, complaint text, symptoms, customer names, and appointment details are not sent to Google Apps Script by the current extension implementation.</p>
 
   <h2>AI Provider or Backend Processing</h2>
