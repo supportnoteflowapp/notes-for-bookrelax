@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <image:image>
+      <image:loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/assets/welcome/step-2-open-bookrelax.svg</image:loc>
+      <image:caption>NoteFlow BookRelax treatment notes Chrome extension</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/bookrelax-chrome-extension.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <image:image>
+      <image:loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/assets/welcome/step-5-start-autofill.svg</image:loc>
+      <image:caption>BookRelax Chrome extension for massage treatment notes</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/massage-soap-notes.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <image:image>
+      <image:loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/assets/welcome/step-5-start-autofill.svg</image:loc>
+      <image:caption>Massage SOAP notes and treatment note templates for BookRelax</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/install-chrome-extension.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <image:image>
+      <image:loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/assets/welcome/step-1-pin-noteflow.svg</image:loc>
+      <image:caption>Install and pin the NoteFlow Chrome extension</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/welcome-new-user.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <image:image>
+      <image:loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/assets/welcome/step-5-start-autofill.svg</image:loc>
+      <image:caption>NoteFlow setup guide for BookRelax auto-fill</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supportnoteflowapp.github.io/notes-for-bookrelax/privacy.html</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+</urlset>
+
