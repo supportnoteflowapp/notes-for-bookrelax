@@ -76,7 +76,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
           <option value="auto-fill">Auto-fill not working</option>
           <option value="body-chart">Body chart detection issue</option>
           <option value="template">Template / Slot problem</option>
-          <option value="license">License / Payment issue</option>
+          <option value="membership">Membership / Payment issue</option>
           <option value="ui">UI / Display problem</option>
           <option value="other">Other</option>
         </select>
@@ -134,7 +134,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
 
   <!-- Contact -->
   <div class="form-pane" id="pane-contact">
-    <div class="info-box">Questions about your license, billing, setup, or anything else? We'll get back to you within 24 hours.</div>
+    <div class="info-box">Questions about your membership, billing, setup, or anything else? We'll get back to you within 24 hours.</div>
     <form id="formContact" onsubmit="return submitForm(event,'contact')">
       <div class="field">
         <label>Your Email</label>
@@ -143,7 +143,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
       <div class="field">
         <label>Subject</label>
         <select name="category">
-          <option value="license">License / Activation</option>
+          <option value="membership">Membership / Activation</option>
           <option value="billing">Billing / Payment</option>
           <option value="setup">Setup / Installation</option>
           <option value="refund">Refund Request</option>
@@ -155,9 +155,9 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
         <textarea name="description" required placeholder="How can we help you?"></textarea>
       </div>
       <div class="field">
-        <label>License Key (optional)</label>
-        <input type="text" name="licenseKey" placeholder="XXXX-XXXX-XXXX-XXX">
-        <div class="hint">If your question is about a license, please include it so we can look it up.</div>
+        <label>Membership email (optional)</label>
+        <input type="email" name="licenseKey" placeholder="your@email.com">
+        <div class="hint">If your question is about a membership, please include the purchase email so we can look it up.</div>
       </div>
       <button type="submit" class="submit-btn" id="btnContact">Send Message →</button>
       <div class="status" id="statusContact"></div>

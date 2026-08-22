@@ -10,7 +10,7 @@
   <g font-family="Arial, sans-serif" font-size="23" fill="#243244">
     <text x="316" y="324">Read supported BookRelax page content only when needed.</text>
     <text x="316" y="382">Use templates and body chart selections for note filling.</text>
-    <text x="316" y="440">Send license verification to the license service.</text>
+    <text x="316" y="440">Send membership verification to the membership service.</text>
   </g>
   <g fill="#16a34a">
     <circle cx="284" cy="315" r="14"/><circle cx="284" cy="373" r="14"/><circle cx="284" cy="431" r="14"/>

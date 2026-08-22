@@ -33,24 +33,24 @@
   <p>Customer treatment information and health-related information may be processed locally in the browser to choose template content, body areas, muscles, and fields to insert into BookRelax.</p>
 
   <h2>Data You Provide</h2>
-  <p>You may provide license keys, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. You also provide consent status when you choose to use the extension.</p>
+  <p>You may provide a membership email, template text, body map mappings, treatment-note field preferences, stop date settings, and treatment plan settings. You also provide consent status when you choose to use the extension.</p>
 
   <h2>Local Storage</h2>
-  <p>NoteFlow stores extension settings, templates, body map mappings, license status, usage counts, referral identifier, active template slot, language choice, and privacy consent status in Chrome extension storage. This data remains until you delete it, reset Chrome extension data, uninstall the extension, or use the in-extension deletion control.</p>
+  <p>NoteFlow stores extension settings, templates, body map mappings, membership status, usage counts, referral identifier, active template slot, language choice, and privacy consent status in Chrome extension storage. This data remains until you delete it, reset Chrome extension data, uninstall the extension, or use the in-extension deletion control.</p>
   <p>NoteFlow does not store generated treatment-note history as a separate history list. It stores only usage counts and the templates/settings required to operate the extension.</p>
 
   <h2>External Transmission</h2>
-  <p>License verification and referral registration are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. The license verification request includes the license key, action, and extension version. The referral registration request includes a referral code and license owner email returned by the license service.</p>
+  <p>Membership verification and referral registration are sent by HTTPS to Google Apps Script endpoints on <code>script.google.com</code> or <code>script.googleusercontent.com</code>. The membership verification request includes the membership email, verification action, and extension version. The referral registration request may include a referral code and membership email returned by the membership service.</p>
   <p>Treatment-note text, body chart content, complaint text, symptoms, customer names, and appointment details are not sent to Google Apps Script by the current extension implementation.</p>
 
   <h2>AI Provider or Backend Processing</h2>
-  <p>The current extension package does not send treatment information to an AI API. It uses local templates, local keyword matching, and local body-chart detection. The only external backend processing in the current implementation is Google Apps Script for license and referral functions.</p>
+  <p>The current extension package does not send treatment information to an AI API. It uses local templates, local keyword matching, and local body-chart detection. The only external backend processing in the current implementation is Google Apps Script for membership and referral functions.</p>
 
   <h2>Use of Data</h2>
-  <p>Data is used only to generate and insert treatment notes into BookRelax, verify license access, track note usage, maintain user settings, and operate referrals.</p>
+  <p>Data is used only to generate and insert treatment notes into BookRelax, verify membership access, track note usage, maintain user settings, and operate referrals.</p>
 
   <h2>Third-Party Processors</h2>
-  <p>Google Apps Script is used for license verification and referral registration. Chrome/Google browser storage is used to store extension settings through Chrome extension storage.</p>
+  <p>Google Apps Script is used for membership verification and referral registration. Chrome/Google browser storage is used to store extension settings through Chrome extension storage.</p>
 
   <h2>Data Sharing, Sale, Advertising, and Tracking</h2>
   <p>NoteFlow does not sell personal data. NoteFlow does not use customer treatment information for advertising. NoteFlow does not include analytics, advertising pixels, telemetry, or tracking services in the extension package.</p>
@@ -59,10 +59,10 @@
   <p>Local extension data remains until you delete it, reset the extension, or uninstall the extension. You can open NoteFlow settings and use "Delete locally stored extension data" to remove extension-owned local data. You can also withdraw consent, which disables sensitive processing until consent is granted again.</p>
 
   <h2>Security</h2>
-  <p>External license and referral requests are restricted to HTTPS Google Apps Script endpoints. NoteFlow blocks non-HTTPS external requests in the extension background service worker.</p>
+  <p>External membership and referral requests are restricted to HTTPS Google Apps Script endpoints. NoteFlow blocks non-HTTPS external requests in the extension background service worker.</p>
 
   <h2>Permissions</h2>
-  <p>NoteFlow uses Chrome storage to save settings and consent status, scripting to communicate with supported BookRelax pages, a BookRelax host permission to run only on supported BookRelax pages, and Google Apps Script host permissions for license and referral processing.</p>
+  <p>NoteFlow uses Chrome storage to save settings and consent status, scripting to communicate with supported BookRelax pages, a BookRelax host permission to run only on supported BookRelax pages, and Google Apps Script host permissions for membership and referral processing.</p>
 
   <h2>User Controls</h2>
   <p>You can review this policy, view consent status, withdraw consent, and delete locally stored extension data from the NoteFlow settings tab.</p>

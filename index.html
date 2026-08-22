@@ -271,7 +271,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
         <li>Smart priority fill</li>
       </ul>
       <div class="price-form">
-        <label>Email (key sent here)</label>
+        <label>Membership email</label>
         <input type="email" id="email10" placeholder="your@email.com">
         <button class="price-btn" id="btn10">Buy Pro — $4.99/month →</button>
         <div class="status-msg" id="status10"></div>
@@ -289,14 +289,14 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
         <li>Priority support</li>
       </ul>
       <div class="price-form">
-        <label>Email (key sent here)</label>
+        <label>Membership email</label>
         <input type="email" id="email15" placeholder="your@email.com">
         <button class="price-btn" id="btn15">Buy Pro+ — $8.99/month →</button>
         <div class="status-msg" id="status15"></div>
       </div>
     </div>
   </div>
-  <p style="font-size:11px;color:var(--dim);margin-top:8px">Key sent within 30s of payment · Cancel anytime</p>
+  <p style="font-size:11px;color:var(--dim);margin-top:8px">Membership activates by purchase email · Cancel anytime</p>
 </div>
 
 <!-- HOW TO -->
@@ -305,7 +305,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
   <div class="step-item"><div class="step-num">1</div><div class="step-content"><h4>Install from Chrome Web Store</h4><p>Click "Add to Chrome" — free, no account needed. Works only on mybookrelax.com.</p></div></div>
   <div class="step-item"><div class="step-num">2</div><div class="step-content"><h4>Open mybookrelax.com Work list</h4><p>Click 🖐 in Chrome toolbar → go to <strong>Templates</strong> tab → set up your A–E slot templates</p></div></div>
   <div class="step-item"><div class="step-num">3</div><div class="step-content"><h4>Use the Muscle Picker</h4><p>Click ✨ Smart mode → tap a body region (Neck, Shoulder, Lower Back...) → all 6 fields auto-fill with clinical content</p></div></div>
-  <div class="step-item"><div class="step-num">4</div><div class="step-content"><h4>Buy a plan when ready</h4><p>Enter email above → pay via Gumroad → key arrives in 30s → Settings → Verify License ✅</p></div></div>
+  <div class="step-item"><div class="step-num">4</div><div class="step-content"><h4>Buy a plan when ready</h4><p>Enter email above → pay via Gumroad → Settings → enter the same email → verify membership ✅</p></div></div>
   <div class="step-item"><div class="step-num">5</div><div class="step-content"><h4>Go to Work list → Start Auto Fill</h4><p>Extension reads body chart + complaint → fills all 6 fields → clicks Done → rotates to next slot automatically</p></div></div>
 </div>
 
@@ -340,7 +340,7 @@ footer{text-align:center;padding:28px 24px;font-size:11px;color:var(--dim);borde
     <div class="support-card">
       <div class="s-icon">📧</div>
       <h3>Email Support</h3>
-      <p>Questions about your license, billing, or anything else? Email us directly.</p>
+      <p>Questions about your membership, billing, or anything else? Email us directly.</p>
       <a class="s-btn" href="feedback.html#contact">Email Us →</a>
     </div>
     <div class="support-card">
@@ -427,7 +427,7 @@ if(REF){
   }).catch(()=>{});
 }
 
-const GUMROAD = {'10':'https://skyautofitf.gumroad.com/l/kdxtum','15':'https://skyautofitf.gumroad.com/l/jrdupe'};
+const GUMROAD = {'10':'https://noteflowapp.gumroad.com/l/kdxtum','15':'https://noteflowapp.gumroad.com/l/jrdupe'};
 
 function buy(plan){
   const emailEl = document.getElementById('email'+plan);
