@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://supportnoteflowapp.github.io/notes-for-bookrelax/sitemap.xml
